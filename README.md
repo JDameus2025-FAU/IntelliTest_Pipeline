@@ -45,11 +45,11 @@ The pipeline can be implemented using Python along with LLM APIs (e.g., OpenAI o
 The system can be triggered through development events such as a Git push or pull request, or executed manually for testing purposes. While full CI/CD integration is feasible, this prototype focuses on demonstrating the pipeline through controlled test scenarios.
 
 ## Experiments
-###Experiment 1: Simple Test Generation
+### Experiment 1: Simple Test Generation
 The first experiment evaluates how well the pipeline generates tests for simple functions with straightforward logic. A small function with predictable inputs and outputs is provided to the pipeline, and the generated unit tests are reviewed for correctness, executable structure, and assertion quality. The goal of this experiment is to determine whether the system can successfully produce valid baseline tests for simple code scenarios. This serves as a foundation for measuring the pipeline’s reliability before applying it to more complex cases.
 
-###Experiment 2: Complex and Edge Case Test Generation
+### Experiment 2: Complex and Edge Case Test Generation
 The second experiment tests the pipeline on more complex functions that include conditional logic, multiple branches, or possible edge cases. The objective is to evaluate whether the pipeline can identify missing cases such as null inputs, empty values, invalid parameters, or boundary conditions. The generated tests are examined based on how completely they cover the function behavior and whether they address scenarios that developers commonly overlook. This experiment helps measure the system’s usefulness in improving test completeness and reducing the risk of missed defects.
 
-###Experiment 3: Initial Output vs Iterative Refinement
+### Experiment 3: Initial Output vs Iterative Refinement
 The third experiment compares the quality of tests generated in a single pass against tests produced after the pipeline’s evaluation and refinement loop. In this setup, the same source code is used, but the first output is recorded before refinement and then compared with the improved version after feedback is applied. The comparison focuses on factors such as assertion strength, clarity, structure, and coverage of edge cases. The purpose of this experiment is to measure whether iterative improvement actually increases the quality and reliability of generated tests.
