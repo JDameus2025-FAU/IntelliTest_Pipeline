@@ -1,27 +1,27 @@
 # IntelliTest Pipeline Findings
 
-- Run timestamp: 2026-04-12 23:00:28
-- LLM mode: `mock`
-- Model label: `gpt-5.2`
+- Run timestamp: 2026-04-12 23:34:56
+- LLM mode: `groq`
+- Model label: `openai/gpt-oss-20b`
 - Functions evaluated: 4
 
 ## Aggregate Results
 
-- Average initial total score: 14.75 / 20
-- Average refined total score: 17.50 / 20
-- Functions improved after refinement: 4 / 4
-- Functions unchanged after refinement: 0 / 4
+- Average initial total score: 17.75 / 20
+- Average refined total score: 19.50 / 20
+- Functions improved after refinement: 3 / 4
+- Functions unchanged after refinement: 1 / 4
 
 ## Observations
 
-- Largest improvement: `classify_score` (+4 points)
-- Smallest improvement: `add_numbers` (+1 points)
+- Largest improvement: `add_numbers` (+4 points)
+- Smallest improvement: `classify_score` (+0 points)
 - Refinement tends to help most when the initial tests miss edge cases or exception behavior.
 - The heuristic evaluator is transparent and experiment-friendly, but it measures structural quality rather than full semantic correctness.
 
 ## Per-Function Summary
 
-- `add_numbers`: initial 15 -> refined 16 (+1)
-- `classify_score`: initial 14 -> refined 18 (+4)
-- `normalize_username`: initial 15 -> refined 18 (+3)
-- `moving_average`: initial 15 -> refined 18 (+3)
+- `add_numbers`: initial 15 -> refined 19 (+4)
+- `classify_score`: initial 19 -> refined 19 (+0)
+- `normalize_username`: initial 18 -> refined 20 (+2)
+- `moving_average`: initial 19 -> refined 20 (+1)

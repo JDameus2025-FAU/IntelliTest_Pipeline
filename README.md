@@ -55,10 +55,35 @@ cp .env.example .env
 4. Add your API key to `.env`.
 
 ```env
-OPENAI_API_KEY=your_api_key_here
+LLM_PROVIDER=openai
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL=gpt-5.2
+GROQ_API_KEY=your_groq_api_key_here
+GROQ_MODEL=openai/gpt-oss-20b
+INTELLITEST_USE_MOCK=false
+```
+
+Provider examples:
+
+For OpenAI:
+
+```env
+LLM_PROVIDER=openai
+OPENAI_API_KEY=your_openai_api_key_here
 OPENAI_MODEL=gpt-5.2
 INTELLITEST_USE_MOCK=false
 ```
+
+For Groq:
+
+```env
+LLM_PROVIDER=groq
+GROQ_API_KEY=your_groq_api_key_here
+GROQ_MODEL=openai/gpt-oss-20b
+INTELLITEST_USE_MOCK=false
+```
+
+Note: the older Groq model `llama3-70b-8192` has been deprecated. Use `openai/gpt-oss-20b` or another currently supported Groq model instead.
 
 ## Run
 
