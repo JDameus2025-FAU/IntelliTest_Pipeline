@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import inspect
-from typing import Callable
 
 
 def add_numbers(a: int, b: int) -> int:
@@ -70,26 +69,26 @@ def moving_average(values: list[float], window_size: int) -> list[float]:
 @dataclass(frozen=True)
 class SampleFunction:
     name: str
-    callable_obj: Callable[..., object]
     source_code: str
     description: str
+    condition: str
 
 
 def load_sample_functions() -> list[SampleFunction]:
     """Return the small benchmark set used in the experiment."""
     functions = [
-        add_numbers,
-        classify_score,
-        normalize_username,
-        moving_average,
+        (add_numbers, "simple"),
+        (classify_score, "complex_edge"),
+        (normalize_username, "complex_edge"),
+        (moving_average, "complex_edge"),
     ]
 
     return [
         SampleFunction(
             name=function.__name__,
-            callable_obj=function,
             source_code=inspect.getsource(function),
             description=inspect.getdoc(function) or "",
+            condition=condition,
         )
-        for function in functions
+        for function, condition in functions
     ]

@@ -1,0 +1,2 @@
+experiment_id,function_name,function_condition,provider,generated_path,correctness,assertion_strength,edge_case_coverage,readability,total,notes
+experiment_1_simple_generation,add_numbers,simple,mock,outputs/experiment_1_simple_generation/generated/test_add_numbers.py,5,3,2,5,15,Initial tests generated in mock mode. Python syntax parsed successfully. Imports the target function. Found 2 test case(s). Detected 2 assert statement(s) and 0 exception assertion(s). Edge-oriented patterns detected: negative.

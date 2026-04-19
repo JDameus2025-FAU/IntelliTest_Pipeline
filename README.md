@@ -15,9 +15,10 @@ The prototype:
 ```text
 IntelliTest_Pipeline/
 ├── outputs/
-│   ├── generated/
-│   ├── refined/
-│   └── reports/
+│   ├── experiment_1_simple_generation/
+│   ├── experiment_2_complex_edge_generation/
+│   ├── experiment_3_refinement_comparison/
+│   └── final_report_summary.md
 ├── src/
 │   ├── evaluate_tests.py
 │   ├── generate_tests.py
@@ -103,10 +104,13 @@ python src/run_experiments.py --use-mock-llm
 
 After a run, the project writes:
 
-- initial generated tests to `outputs/generated/`
-- refined tests to `outputs/refined/`
-- the comparison CSV to `outputs/reports/evaluation_summary.csv`
-- a Markdown findings summary to `outputs/reports/findings.md`
+- Experiment 1 outputs to `outputs/experiment_1_simple_generation/`
+- Experiment 2 outputs to `outputs/experiment_2_complex_edge_generation/`
+- Experiment 3 outputs to `outputs/experiment_3_refinement_comparison/`
+- a reusable research-style summary to `outputs/final_report_summary.md`
+
+Each experiment folder contains its own `generated/` directory and `reports/` directory.
+The refinement comparison experiment also includes a separate `refined/` directory.
 
 ## Evaluation Rubric
 
