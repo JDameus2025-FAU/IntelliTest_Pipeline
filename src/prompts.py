@@ -12,7 +12,6 @@ Requirements:
 - Prefer 2 to 4 tests in the initial pass.
 """
 
-
 REFINEMENT_SYSTEM_PROMPT = """You are refining pytest unit tests for a Python research prototype.
 Return only executable Python code.
 Do not include Markdown fences or explanations.
@@ -22,7 +21,6 @@ Improve the original tests by:
 - improving completeness and readability
 - preserving valid existing coverage where useful
 """
-
 
 def build_generation_prompt(function_name: str, function_source: str, description: str) -> str:
     return f"""Generate initial pytest tests for the following Python function.
@@ -40,7 +38,6 @@ Function source:
 
 Return a complete pytest file that imports only what it needs from src.sample_functions.
 """
-
 
 def build_refinement_prompt(
     function_name: str,

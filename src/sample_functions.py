@@ -3,11 +3,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 import inspect
 
-
 def add_numbers(a: int, b: int) -> int:
     """Return the sum of two integers."""
     return a + b
-
 
 def classify_score(score: int) -> str:
     """Classify a numeric score into a letter-style performance bucket."""
@@ -49,7 +47,6 @@ def normalize_username(raw_username: str) -> str:
 
     return normalized
 
-
 def moving_average(values: list[float], window_size: int) -> list[float]:
     """Compute a rounded moving average using a fixed-size sliding window."""
     if window_size <= 0:
@@ -72,7 +69,6 @@ class SampleFunction:
     source_code: str
     description: str
     condition: str
-
 
 def load_sample_functions() -> list[SampleFunction]:
     """Return the small benchmark set used in the experiment."""

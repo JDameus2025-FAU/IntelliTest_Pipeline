@@ -6,16 +6,16 @@ Generate tests for functions with conditionals, validation paths, and edge-case 
 
 ## Setup
 
-- Run timestamp: 2026-04-19 20:26:30
+- Run timestamp: 2026-04-19 20:33:28
 - LLM mode: `groq`
 - Model label: `openai/gpt-oss-20b`
 - Functions evaluated: 3
 
 ## Results
 
-- Average total score: 18.33 / 20
-- Highest-scoring function: `classify_score` (19/20)
-- Lowest-scoring function: `normalize_username` (18/20)
+- Average total score: 17.67 / 20
+- Highest-scoring function: `classify_score` (18/20)
+- Lowest-scoring function: `normalize_username` (17/20)
 
 ## Observations
 
@@ -24,6 +24,6 @@ Generate tests for functions with conditionals, validation paths, and edge-case 
 
 ## Per-Function Summary
 
-- `classify_score` (complex_edge): total 19 / 20
-- `normalize_username` (complex_edge): total 18 / 20
+- `classify_score` (complex_edge): total 18 / 20
+- `normalize_username` (complex_edge): total 17 / 20
 - `moving_average` (complex_edge): total 18 / 20

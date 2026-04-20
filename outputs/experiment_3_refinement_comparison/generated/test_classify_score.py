@@ -1,24 +1,18 @@
 import pytest
 from src.sample_functions import classify_score
 
-@pytest.mark.parametrize(
-    "score,expected",
-    [
-        (100, "excellent"),
-        (90, "excellent"),
-        (89, "good"),
-        (75, "good"),
-        (74, "pass"),
-        (60, "pass"),
-        (59, "fail"),
-        (0, "fail"),
-    ],
-)
-def test_classify_score_buckets(score, expected):
-    assert classify_score(score) == expected
+def test_excellent_classification():
+    assert classify_score(100) == "excellent"
+    assert classify_score(90) == "excellent"
 
-def test_classify_score_invalid_value():
-    with pytest.raises(ValueError):
-        classify_score(-1)
-    with pytest.raises(ValueError):
-        classify_score(101)
+def test_good_classification():
+    assert classify_score(75) == "good"
+    assert classify_score(80) == "good"
+
+def test_pass_classification():
+    assert classify_score(60) == "pass"
+    assert classify_score(59) == "fail"  # just below pass threshold
+
+def test_fail_classification():
+    assert classify_score(0) == "fail"
+    assert classify_score(30) == "fail"

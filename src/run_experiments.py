@@ -12,7 +12,6 @@ from llm_client import LLMClient
 from refine_tests import refine_generated_tests
 from sample_functions import SampleFunction, load_sample_functions
 
-
 @dataclass(frozen=True)
 class ExperimentConfig:
     identifier: str
@@ -150,7 +149,6 @@ def build_experiment_configs() -> list[ExperimentConfig]:
             include_refinement=True,
         ),
     ]
-
 
 def select_functions_for_experiment(
     sample_functions: list[SampleFunction],

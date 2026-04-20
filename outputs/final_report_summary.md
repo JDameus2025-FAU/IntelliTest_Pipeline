@@ -6,7 +6,7 @@ This prototype explores whether iterative LLM-based refinement improves automati
 
 ## Experimental Setup
 
-- Run timestamp: 2026-04-19 20:26:39
+- Run timestamp: 2026-04-19 20:33:38
 - LLM mode: `groq`
 - Model label: `openai/gpt-oss-20b`
 - Evaluation method: transparent heuristic scoring rubric covering correctness, assertion strength, edge-case coverage, and readability.
@@ -15,14 +15,14 @@ This prototype explores whether iterative LLM-based refinement improves automati
 ## Condition Summaries
 
 - Experiment 1 (simple generation): average total score 16.00 / 20 across 1 function(s).
-- Experiment 2 (complex and edge-case generation): average total score 18.33 / 20 across 3 function(s).
-- Experiment 3 (initial vs refinement): average initial score 17.75 / 20 and average refined score 20.00 / 20 across 4 function(s).
+- Experiment 2 (complex and edge-case generation): average total score 17.67 / 20 across 3 function(s).
+- Experiment 3 (initial vs refinement): average initial score 16.75 / 20 and average refined score 18.25 / 20 across 4 function(s).
 
 ## Concise Observations
 
 - In this small benchmark, simple functions were generally easier to cover with acceptable first-pass tests than functions with validation logic or edge-case-heavy behavior.
 - The complex and edge-case condition showed more variation in heuristic quality, which is consistent with the broader behavioral surface of those functions.
-- In the refinement comparison, 4 of 4 functions improved and 0 remained unchanged under the heuristic rubric.
+- In the refinement comparison, 2 of 4 functions improved and 2 remained unchanged under the heuristic rubric.
 - The refinement stage appears promising as a way to increase structural completeness, but the current evidence should be treated as preliminary.
 
 ## Limitations

@@ -2,21 +2,21 @@ import pytest
 from src.sample_functions import normalize_username
 
 def test_basic_normalization():
-    assert normalize_username("  John_Doe  ") == "john_doe"
+    raw = "  John-Doe_123   "
+    expected = "john_doe123"
+    assert normalize_username(raw) == expected
 
-def test_collapse_and_trim_separators():
-    assert normalize_username("__John--Doe__") == "john_doe"
-    assert normalize_username("-John-") == "john"
-    assert normalize_username("a__b") == "a_b"
+def test_collapse_multiple_separators():
+    raw = "___a--b__c__"
+    expected = "a_b_c"
+    assert normalize_username(raw) == expected
 
-def test_remove_non_alphanumeric_and_case():
-    assert normalize_username("John!Doe") == "johndoe"
-    assert normalize_username("JOHN_DOE") == "john_doe"
-
-def test_invalid_inputs():
-    with pytest.raises(ValueError, match="None"):
+def test_error_on_none_username():
+    with pytest.raises(ValueError, match="cannot be None"):
         normalize_username(None)
-    with pytest.raises(ValueError, match="empty"):
+
+def test_error_on_empty_or_only_separators():
+    with pytest.raises(ValueError, match="cannot be empty"):
         normalize_username("   ")
-    with pytest.raises(ValueError, match="at least one alphanumeric"):
-        normalize_username("__")
+    with pytest.raises(ValueError, match="must contain at least one alphanumeric"):
+        normalize_username("___---___")

@@ -4,7 +4,6 @@ from dataclasses import dataclass
 import ast
 import re
 
-
 @dataclass(frozen=True)
 class EvaluationResult:
     correctness: int
@@ -22,7 +21,6 @@ class EvaluationResult:
             + self.readability
         )
 
-
 EDGE_PATTERNS = {
     "none": r"\bNone\b",
     "empty_string": r'""|\'\'',
@@ -33,7 +31,6 @@ EDGE_PATTERNS = {
     "boundary": r"\b100\b|\b90\b|\b75\b|\b60\b",
     "whitespace": r'"  |  "',
 }
-
 
 def evaluate_test_code(function_name: str, test_code: str) -> EvaluationResult:
     notes: list[str] = []
@@ -128,7 +125,6 @@ def _score_correctness(
 
     return max(1, min(5, score))
 
-
 def _score_assertion_strength(test_code: str, assert_count: int, raises_count: int) -> int:
     if assert_count == 0 and raises_count == 0:
         return 1
@@ -151,7 +147,6 @@ def _score_assertion_strength(test_code: str, assert_count: int, raises_count: i
 
     return max(1, min(5, score))
 
-
 def _score_edge_case_coverage(edge_hits: list[str], raises_count: int) -> int:
     score = 1
 
@@ -165,7 +160,6 @@ def _score_edge_case_coverage(edge_hits: list[str], raises_count: int) -> int:
         score += 1
 
     return max(1, min(5, score))
-
 
 def _score_readability(test_code: str, test_names: list[str]) -> int:
     lines = [line for line in test_code.splitlines() if line.strip()]

@@ -6,10 +6,8 @@ from typing import Any
 
 from dotenv import load_dotenv
 
-
 class LLMClientError(RuntimeError):
     """Raised when the configured LLM provider cannot complete a request."""
-
 
 @dataclass(frozen=True)
 class LLMConfig:
@@ -23,7 +21,6 @@ class LLMConfig:
     default_provider: str = "openai"
     default_openai_model: str = "gpt-5.2"
     default_groq_model: str = "openai/gpt-oss-20b"
-
 
 class LLMClient:
     """Small wrapper that supports interchangeable OpenAI and Groq providers."""
