@@ -6,16 +6,16 @@ Generate tests for simple functions and evaluate the quality of the first-pass o
 
 ## Setup
 
-- Run timestamp: 2026-04-19 02:24:50
-- LLM mode: `mock`
+- Run timestamp: 2026-04-19 20:26:27
+- LLM mode: `groq`
 - Model label: `openai/gpt-oss-20b`
 - Functions evaluated: 1
 
 ## Results
 
-- Average total score: 15.00 / 20
-- Highest-scoring function: `add_numbers` (15/20)
-- Lowest-scoring function: `add_numbers` (15/20)
+- Average total score: 16.00 / 20
+- Highest-scoring function: `add_numbers` (16/20)
+- Lowest-scoring function: `add_numbers` (16/20)
 
 ## Observations
 
@@ -24,4 +24,4 @@ Generate tests for simple functions and evaluate the quality of the first-pass o
 
 ## Per-Function Summary
 
-- `add_numbers` (simple): total 15 / 20
+- `add_numbers` (simple): total 16 / 20

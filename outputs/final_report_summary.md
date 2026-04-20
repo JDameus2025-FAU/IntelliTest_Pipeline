@@ -6,17 +6,17 @@ This prototype explores whether iterative LLM-based refinement improves automati
 
 ## Experimental Setup
 
-- Run timestamp: 2026-04-19 02:24:50
-- LLM mode: `mock`
+- Run timestamp: 2026-04-19 20:26:39
+- LLM mode: `groq`
 - Model label: `openai/gpt-oss-20b`
 - Evaluation method: transparent heuristic scoring rubric covering correctness, assertion strength, edge-case coverage, and readability.
 - Scope: small benchmark of sample Python functions intended for local experimentation rather than production-grade test evaluation.
 
 ## Condition Summaries
 
-- Experiment 1 (simple generation): average total score 15.00 / 20 across 1 function(s).
-- Experiment 2 (complex and edge-case generation): average total score 14.67 / 20 across 3 function(s).
-- Experiment 3 (initial vs refinement): average initial score 14.75 / 20 and average refined score 17.50 / 20 across 4 function(s).
+- Experiment 1 (simple generation): average total score 16.00 / 20 across 1 function(s).
+- Experiment 2 (complex and edge-case generation): average total score 18.33 / 20 across 3 function(s).
+- Experiment 3 (initial vs refinement): average initial score 17.75 / 20 and average refined score 20.00 / 20 across 4 function(s).
 
 ## Concise Observations
 
